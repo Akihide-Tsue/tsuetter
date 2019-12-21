@@ -26,7 +26,8 @@ set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
 # sharedへのシンボリックリンクを追加
-set :linked_files, %w{ /var/www/tsuettwer/shared/config/master.key }
+# set :linked_files, %w{ /var/www/tsuettwer/shared/config/master.key }
+set :linked_files, fetch(:linked_files, []).push("/var/www/tsuettwer/shared/config/master.key")
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 after 'deploy:publishing', 'deploy:restart'
