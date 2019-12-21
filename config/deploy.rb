@@ -16,7 +16,7 @@ set :rbenv_ruby, '2.6.3' #カリキュラム通りに進めた場合、2.5.1か2
 
 # どの公開鍵を利用してデプロイするか
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['~/.ssh/key_pem.pem'] \
+                  keys: ['~/.ssh/tsuetter.pem'] \
 
 # プロセス番号を記載したファイルの場所
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
@@ -44,8 +44,8 @@ task :upload do
     if test "[ ! -d #{shared_path}/config ]"
       execute "mkdir -p #{shared_path}/config"
     end
-    upload!('config/master.key', "#{shared_path}/config/master.key")
-  end
+  upload!('config/master.key', "#{shared_path}/config/master.key")
+end
 
 before :starting, 'deploy:upload'
 after :finishing, 'deploy:cleanup'
@@ -59,3 +59,5 @@ path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
 AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
 AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
 }
+
+append :linked_files, 'config/database.yml', 'config/master.key'
