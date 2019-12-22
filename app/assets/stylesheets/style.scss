@@ -231,6 +231,12 @@ div.contents.row {
       &:hover ul.more_list {
         display: block;
       }
+      .photo-edit{
+        background-color: #fff;
+        width: 22px;
+        height: 22px;
+
+      }
       ul.more_list {
         position: absolute;
         text-align: left;
@@ -298,14 +304,6 @@ div.contents.row {
     text-align: center;
     h3 {
       @include baseMargin;
-    }
-    h4 {
-      .done{
-        color:orange;
-        &:hover {
-          color: $blue;
-        }
-      }
     }
   }
 }
