@@ -299,6 +299,14 @@ div.contents.row {
     h3 {
       @include baseMargin;
     }
+    h4 {
+      .done{
+        color:orange;
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
   }
 }
 
