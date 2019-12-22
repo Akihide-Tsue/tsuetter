@@ -138,7 +138,6 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, serif;
   font-size: 1em;
 }
 
@@ -576,37 +575,3 @@ ul li {
 .row .row.collapse:after {
   clear: both;
 }
-
-@media only screen and (max-width: 40em) {
-  .row {
-    width: 100%;
-    padding: 0 20px !important;
-  }
-  .row .grid-1,
-  .row .grid-2,
-  .row .grid-3,
-  .row .grid-4,
-  .row .grid-5,
-  .row .grid-6,
-  .row .grid-7,
-  .row .grid-8,
-  .row .grid-9,
-  .row .grid-10,
-  .row .grid-11,
-  .row .grid-12 {
-    float: none;
-    width: 100% !important;
-    margin: 0 !important;
-    position: static !important;
-  }
-}
-/* max-width 640px, mobile-only styles, use when QAing mobile issues */
-@media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  .row .grid-1,
-  .row .grid-2,
-  .row .grid-3,
-  .row .grid-4 {
-    width: 48.2% !important;
-  }
-}
-/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
