@@ -114,11 +114,11 @@ header.header {
       line-height: 41px;
       float: left;
     }
-    h1.post-btn {
+    .post-btn {
       float: right;
       text-align: right;
       line-height: 41px;
-      a.post {
+      .a.post {
         @extend .btn;
         width: 120px;
         display: inline-left;
@@ -369,5 +369,12 @@ footer {
 
   .search-btn {
     width: 10%;
+  }
+}
+
+.field1{
+  display: flex;
+  #user_remember_me{
+    width: 30px;
   }
 }

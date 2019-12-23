@@ -24,9 +24,17 @@
       .header1
         %h1.title
           = link_to "Tsuetter", root_path
-        %h1.post-btn
-          = link_to new_tweet_path do
-            投稿する
+
+        - if user_signed_in?
+          %h1.post-btn
+            = link_to destroy_user_session_path, method: :delete, class: "a.post" do
+              ログアウト
+            = link_to "投稿する", new_tweet_path, class: "a.post"
+        - else
+          %h1.post-btn
+            = link_to new_user_session_path, class: 'a.post' do
+              ログイン
+            = link_to "新規登録", new_user_registration_path, class: 'a.post'
     = yield
     %footer
       %p
