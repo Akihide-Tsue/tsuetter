@@ -33,6 +33,10 @@ class TweetsController < ApplicationController
     @comments = @tweet.comments.includes(:user)
   end
 
+  def search
+    @tweets = Tweet.search(params[:keyword]).order("created_at DESC").page(params[:page]).per(5)
+  end
+
   private
   def tweet_params
     params.require(:tweet).permit(:image, :text).merge(user_id: current_user.id)
