@@ -29,6 +29,7 @@
           %h1.post-btn
             = link_to destroy_user_session_path, method: :delete, class: "a.post" do
               ログアウト
+            = link_to "マイページ", "/users/#{current_user.id}"
             = link_to "投稿する", new_tweet_path, class: "a.post"
         - else
           %h1.post-btn
