@@ -13,7 +13,7 @@
             %li
               = link_to '削除', "/tweets/#{tweet.id}", method: :delete
       = simple_format(tweet.text)
-      %p= tweet.text
+      %p.index= tweet.text
       %span.name
         = tweet.user.nickname
   = paginate(@tweets)

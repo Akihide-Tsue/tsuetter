@@ -4,6 +4,7 @@
 
   - @tweets.each do |tweet|
     .content_post{:style => "background-image: url(#{tweet.image});"}
+      =render "detail"
       = simple_format(tweet.text)
       %p= tweet.text
   = paginate(@tweets)
